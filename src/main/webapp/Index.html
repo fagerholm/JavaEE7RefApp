@@ -5,6 +5,13 @@
     <title></title>
 </head>
 <body>
+<script>
+    var socket = new WebSocket("ws://localhost:8080/test/echo");
+    socket.onmessage = function(event){
+        alert(event.data);
+    }
+</script>
 Hello World! Let's test some JavaEE7 functionality!
+<button onclick="socket.send('Hey Duke')">Send</button>
 </body>
 </html>
